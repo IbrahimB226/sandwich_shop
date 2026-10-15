@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sandwich_shop/models/sandwich.dart';
 import 'package:sandwich_shop/screens/order_screen.dart';
 
-
 class SandwichCard extends StatelessWidget {
   final Sandwich sandwich;
 
@@ -41,9 +40,7 @@ class SandwichCard extends StatelessWidget {
                       const SizedBox(height: 8),
                       Text(
                         sandwich.description,
-                        style: const TextStyle(
-                          color: Colors.black54,
-                        ),
+                        style: const TextStyle(color: Colors.black54),
                       ),
                     ],
                   ),

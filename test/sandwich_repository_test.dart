@@ -28,7 +28,7 @@ void main() {
       expect(sixInch.imagePath, isNotEmpty);
     });
 
-        test('getSandwichById returns matching sandwich when id exists', () {
+    test('getSandwichById returns matching sandwich when id exists', () {
       final SandwichRepository repository = SandwichRepository();
       final Sandwich? sandwich = repository.getSandwichById('footlong');
 

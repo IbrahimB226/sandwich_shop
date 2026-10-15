@@ -5,11 +5,7 @@ class OrderScreen extends StatefulWidget {
   final Sandwich sandwich;
   final int maxQuantity;
 
-  const OrderScreen({
-    super.key,
-    required this.sandwich,
-    this.maxQuantity = 10,
-  });
+  const OrderScreen({super.key, required this.sandwich, this.maxQuantity = 10});
 
   @override
   State<OrderScreen> createState() {
@@ -23,17 +19,12 @@ class _OrderScreenState extends State<OrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Order ${widget.sandwich.name}'),
-      ),
+      appBar: AppBar(title: Text('Order ${widget.sandwich.name}')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            OrderItemDisplay(
-              _quantity,
-              widget.sandwich.name,
-            ),
+            OrderItemDisplay(_quantity, widget.sandwich.name),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -63,8 +54,7 @@ class _OrderScreenState extends State<OrderScreen> {
     if (_quantity > 0) {
       setState(() => _quantity--);
     }
-}
-
+  }
 }
 
 class OrderItemDisplay extends StatelessWidget {
@@ -78,4 +68,3 @@ class OrderItemDisplay extends StatelessWidget {
     return Text('$quantity $itemType sandwich(es): ${'🥪' * quantity}');
   }
 }
-
