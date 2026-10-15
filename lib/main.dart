@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sandwich_shop/screens/menu_screen.dart';
 
 void main() {
   runApp(const App());
@@ -9,10 +10,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sandwich Shop App',
-      home: OrderScreen(maxQuantity: 5),
-    );
+    return const MaterialApp(title: 'Sandwich Shop App', home: MenuScreen());
   }
 }
 
@@ -33,17 +31,12 @@ class _OrderScreenState extends State<OrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sandwich Counter'),
-      ),
+      appBar: AppBar(title: const Text('Sandwich Counter')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            OrderItemDisplay(
-              _quantity,
-              'Footlong',
-            ),
+            OrderItemDisplay(_quantity, 'Footlong'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -73,8 +66,7 @@ class _OrderScreenState extends State<OrderScreen> {
     if (_quantity > 0) {
       setState(() => _quantity--);
     }
-}
-
+  }
 }
 
 class OrderItemDisplay extends StatelessWidget {
